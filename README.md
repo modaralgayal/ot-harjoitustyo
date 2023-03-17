@@ -5,4 +5,5 @@
 ### Viikko 1
 
 
-[gitlog.txt](~/ot-harjoitustyo/laskarit/viikko1/gitlog.txt)
+[gitlog.txt](/home/algayalm/Työpöytä/ot-harjoitustyo/laskarit/viikko1)
+
