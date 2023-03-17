@@ -5,5 +5,5 @@
 ### Viikko 1
 
 
-[gitlog.txt](laskarit/viikko1/gitlog.txt)
+[gitlog.txt](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
