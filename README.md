@@ -1,7 +1,3 @@
-**OHTE harjoitustyö**
+**Viikko 1**
 
-Tässä kokeillaan miten käytetään markdown tyyliä
-
-*Tämä on kurssivoitu teksti*
-
-[gitlog](laskarit/viikko1/gitlog.txt) sekä komentorivi tehtäviin
+[gitlog.txt](laskarit/viikko1/gitlog.txt)
