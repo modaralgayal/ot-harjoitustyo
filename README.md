@@ -16,3 +16,6 @@
 
 [Coverage Kuvakaappaus](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko2/Kuvakaappaus%20-%202023-03-28%2011-45-36.png)
 
+#### VaatimusMäärittely
+
+[Vaatimukset](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
