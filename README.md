@@ -13,3 +13,6 @@
 ### Viikko 2
 
 [kassapaate_test.py](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
+
+[Coverage Kuvakaappaus](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko2/Kuvakaappaus%20-%202023-03-28%2011-45-36.png)
+
