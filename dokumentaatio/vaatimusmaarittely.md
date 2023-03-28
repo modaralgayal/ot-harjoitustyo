@@ -1,6 +1,6 @@
 # Vaatimukset
 
-###Pää Idea: Ristinolla Peli + Variaatioita
+### Pää Idea: Ristinolla Peli + Variaatioita
 
 #### Tavoitteet:
 
