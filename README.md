@@ -12,4 +12,4 @@
 
 ### Viikko 2
 
-[kassapaate_test.py](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko2/unicafe/src/kassapaate.py)
+[kassapaate_test.py](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/laskarit/viikko2/unicafe/src/tests/kassapaate_test.py)
