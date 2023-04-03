@@ -19,3 +19,7 @@
 #### VaatimusMäärittely
 
 [Vaatimukset](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+
+
+### Työaikakirjanpito
+[Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/Tuntikirjanpito.md)
