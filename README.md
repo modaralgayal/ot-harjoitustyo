@@ -21,8 +21,8 @@
 [Vaatimukset](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 
-### Työaikakirjanpito
+#### Työaikakirjanpito
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/Tuntikirjanpito.md)
 
-## Cahngelog
+#### Cahngelog
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
