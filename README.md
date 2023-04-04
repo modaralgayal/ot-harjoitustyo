@@ -23,3 +23,6 @@
 
 ### Työaikakirjanpito
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/Tuntikirjanpito.md)
+
+## Cahngelog
+[Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
