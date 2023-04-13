@@ -1,6 +1,8 @@
 import pygame 
 import os
 from random import choice
+from itertools import cycle
+import itertools
 import random
 
 width = 700
@@ -16,8 +18,8 @@ WHITE = (255,255,255)
 PURPLE = (255,0,255)
 BLACK = (0,0,0)
 
-X = pygame.image.load("src/assets/X.png").convert_alpha()
-O = pygame.image.load("src/assets/circle.png").convert_alpha()
+X = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
+O = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
 
 UL = (60,85);  UM = (145,85);  UR = (230,85)   # UpperLeft, UpperMiddle, UpperRight 
 ML = (60,175);  M = (145,175); MR = (230,175)  # MiddleLeft, Middle, MiddleRight 
@@ -25,20 +27,17 @@ BL = (60,265); BM = (145,265); BR = (230,265) # BottomLeft, BottomMiddle, Bottom
 
 
 game_board = []
+played_places = []
+game_situation = [[None for i in range(3)] for i in range(3)]
 
-def alternate():
-    while True:
-        yield X
-        yield O
+print(game_situation)
 
-switch = alternate()
+switch_turn = itertools.cycle([X,O]).__next__
 
 randomize = random.choice([True,False])
 
 if randomize:
-    switch.__next__()
-
-
+    switch_turn()
 
 while True:
 
@@ -52,42 +51,65 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             left_mouse_key = pygame.mouse.get_pressed()[0]
             mouse_pos = pygame.mouse.get_pos()
+            p = switch_turn()
+            next, char = p[0],p[1]
 
             if mouse_pos[0] in range(55,120) and mouse_pos[1] in range(70,150):
-                if UL not in game_board:
-                    game_board.append(UL)
+                if game_situation[0][0] == None:
+                    game_board.append((next,UL))
+                    game_situation[0][0] = char
+
             elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(70,150):
-                if UM not in game_board:
-                    game_board.append(UM)
+                if game_situation[0][1] == None:
+                    game_board.append((next,UM))
+                    game_situation[0][1] = char
+        
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(70,150):
-                if UR not in game_board:
-                    game_board.append(UR)
+                if game_situation[0][2] == None:
+                    game_board.append((next,UR))
+                    game_situation[0][2] = char
             
             elif mouse_pos[0] in range(55,120) and mouse_pos[1] in range(130,240):
-                if ML not in game_board:
-                    game_board.append(ML)
+                if game_situation[1][0] == None:
+                    game_board.append((next,ML))
+                    game_situation[1][0] = char
+        
             elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(130,240):
-                if M not in game_board:
-                    game_board.append(M)
+                if game_situation[1][1] == None:
+                    game_board.append((next,M))
+                    game_situation[1][1] = char
+        
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(130,240):
-                if MR not in game_board:
-                    game_board.append(MR)
+                if game_situation[1][2] == None:
+                    game_board.append((next,MR))
+                    game_situation[1][2] = char
             
             elif mouse_pos[0] in range(55,120) and mouse_pos[1] in range(250,330):
-                if BL not in game_board:
-                    game_board.append(BL)
+                if game_situation[2][0] == None:
+                    game_board.append((next,BL))
+                    game_situation[2][0] = char
+                    
             elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(250,330):
-                if BM not in game_board:
-                    game_board.append(BM)
+                if game_situation[2][1] == None:
+                    game_board.append((next,BM))
+                    game_situation[2][1] = char
+        
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(250,330):
-                if BR not in game_board:
-                    game_board.append(BR)
+                if game_situation[2][2] == None:
+                    game_board.append((next,BR))
+                    game_situation[2][2] = char
+                
             else:
-                print("Outside")
+                print('Outside')
                 pass
 
-
-    key = pygame.key.get_pressed()
+            for row in game_situation:
+                if row[0] == row[1] == row[2] != None:
+                    print("VOITTO UI JUMA SHEEEEEE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            
+            for i in range(3):
+                if game_situation[0][i] == game_situation[1][i] == game_situation[2][i] != None:
+                    print("HUHHUH")
 
 
     # Kanvas for game of 3x3
@@ -114,9 +136,11 @@ while True:
     #----------------------------------------------------------------------# 
 
 
+    for char, pos in game_board:
+        screen.blit(char,pos)
 
-    for pos in game_board:
-        screen.blit(switch.__next__(),pos)
+
+
 
 
     
