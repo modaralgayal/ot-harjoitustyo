@@ -110,6 +110,12 @@ while True:
             for i in range(3):
                 if game_situation[0][i] == game_situation[1][i] == game_situation[2][i] != None:
                     print("HUHHUH")
+            
+            if game_situation[0][0] == game_situation[1][1] == game_situation[2][2] != None:
+                    print("HUHHUH")
+            
+            if game_situation[0][2] == game_situation[1][1] == game_situation[2][0] != None:
+                    print("HUHHUH")
 
 
     # Kanvas for game of 3x3
