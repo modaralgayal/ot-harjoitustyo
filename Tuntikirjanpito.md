@@ -6,6 +6,7 @@
 | 4.4   | 2    | Pohjan viimeistely + Sekvenssikaaviot |
 | 12.4  | 2    | X ja O tulostuksen tekeminen |
 | 13.4  | 2.5  | Voittaminen pelissä on mahdollista |
+| 17.4  | 3    | Sovelluksen jakaminen moduuleihi|
 
  
 
