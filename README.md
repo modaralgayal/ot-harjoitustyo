@@ -2,7 +2,7 @@
 
 #### VaatimusMäärittely
 
-[Vaatimukset](hhttps://github.com/modaralgayal/ot-harjoitustyo/blob/master/TicTacToe/dokumentaatio/vaatimusmaarittely.md)
+[Vaatimukset](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/TicTacToe/dokumentaatio/vaatimusmaarittely.md)
 
 
 #### Työaikakirjanpito
