@@ -6,7 +6,7 @@
 
 
 #### Työaikakirjanpito
-[Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/Tuntikirjanpito.md)
+[Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/TicTacToe/dokumentaatio/Tuntikirjanpito.md)
 
 #### Cahngelog
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
