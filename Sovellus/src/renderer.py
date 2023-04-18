@@ -3,16 +3,15 @@ import pygame
 
 class Renderer:
 
-    def __init__(self, screen, game_board, height):
+    def __init__(self, screen, height):
 
         self.height = height
         self._screen = screen
-        self.game_board = game_board
         self.WHITE = (255,255,255)
         self.BLACK = (0,0,0)
-        self.retry = pygame.image.load("assets/retry.png").convert_alpha()
+        self.retry = pygame.image.load("src/assets/retry.png").convert_alpha()
 
-    def render(self):
+    def render(self, game_board):
         
         self._screen.fill(self.WHITE)
 
@@ -38,7 +37,7 @@ class Renderer:
         pygame.draw.line(self._screen, self.BLACK, (startX, startY), (endX,endY), width)
 
         #----------------------------------------------------------------------# 
-        for char, pos in self.game_board:
+        for char, pos in game_board:
             self._screen.blit(char,pos)
 
         self._screen.blit(self.retry,(450,175))

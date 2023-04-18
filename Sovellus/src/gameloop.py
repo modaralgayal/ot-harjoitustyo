@@ -13,8 +13,8 @@ class Gameloop:
 
         self._renderer = renderer
 
-        X = (pygame.image.load("assets/X.png").convert_alpha(), 'X')
-        O = (pygame.image.load("assets/circle.png").convert_alpha(), 'O')
+        X = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
+        O = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
 
         self.switch_turn = itertools.cycle([X,O]).__next__
 
@@ -36,7 +36,7 @@ class Gameloop:
             if self._handle_events() == False:
                 break
 
-            self._render()
+            self._render(self.game_board)
 
     
     def _handle_events(self):
@@ -133,10 +133,8 @@ class Gameloop:
                 
             if event.type == pygame.QUIT:
                 return False
-            
-        print(self.game_board)
 
             
-    def _render(self):
+    def _render(self, game_board):
 
-        self._renderer.render()
+        self._renderer.render(game_board)

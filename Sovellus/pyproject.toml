@@ -11,6 +11,8 @@ python = "^3.8"
 cowsay = "^5.0"
 invoke = "^2.0.0"
 tasks = "^2.8.0"
+pygame = "^2.3.0"
+coverage = "^7.2.3"
 
 
 [tool.poetry.group.dev.dependencies]

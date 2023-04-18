@@ -1,6 +1,5 @@
 import pygame
 from gameloop import Gameloop
-from clock import Clock
 from renderer import Renderer
 from game_board import GameBoard
 
@@ -23,7 +22,7 @@ def main():
 
     pygame.display.set_caption("Tic Tac Toe")
 
-    renderer = Renderer(display, game_board, height)
+    renderer = Renderer(display, height)
     game_loop = Gameloop(game_board, game_situation, renderer, width, height, UL, UM, UR, ML, M, MR, BL, BM, BR)
 
     pygame.init()

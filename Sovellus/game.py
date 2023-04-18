@@ -15,11 +15,11 @@ clock = pygame.time.Clock()
 
 
 WHITE = (255,255,255)
-PURPLE = (255,0,255)
 BLACK = (0,0,0)
 
-X = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
-O = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
+X = (pygame.image.load("all/assets/X.png").convert_alpha(), 'X')
+O = (pygame.image.load("all/assets/circle.png").convert_alpha(), 'O')
+Retry = pygame.image.load("all/assets/retry.png").convert_alpha()
 
 UL = (60,85);  UM = (145,85);  UR = (230,85)   # UpperLeft, UpperMiddle, UpperRight 
 ML = (60,175);  M = (145,175); MR = (230,175)  # MiddleLeft, Middle, MiddleRight 
@@ -27,7 +27,6 @@ BL = (60,265); BM = (145,265); BR = (230,265) # BottomLeft, BottomMiddle, Bottom
 
 
 game_board = []
-played_places = []
 game_situation = [[None for i in range(3)] for i in range(3)]
 
 print(game_situation)
@@ -39,7 +38,7 @@ randomize = random.choice([True,False])
 if randomize:
     switch_turn()
 
-while True:
+while True: 
 
     pygame.time.delay(100)
 
@@ -51,53 +50,74 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             left_mouse_key = pygame.mouse.get_pressed()[0]
             mouse_pos = pygame.mouse.get_pos()
-            p = switch_turn()
-            next, char = p[0],p[1]
+
 
             if mouse_pos[0] in range(55,120) and mouse_pos[1] in range(70,150):
                 if game_situation[0][0] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,UL))
                     game_situation[0][0] = char
 
-            elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(70,150):
+            elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(70,150):    
                 if game_situation[0][1] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,UM))
                     game_situation[0][1] = char
         
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(70,150):
                 if game_situation[0][2] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,UR))
                     game_situation[0][2] = char
             
             elif mouse_pos[0] in range(55,120) and mouse_pos[1] in range(130,240):
                 if game_situation[1][0] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,ML))
                     game_situation[1][0] = char
         
             elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(130,240):
                 if game_situation[1][1] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,M))
                     game_situation[1][1] = char
         
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(130,240):
                 if game_situation[1][2] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,MR))
                     game_situation[1][2] = char
             
             elif mouse_pos[0] in range(55,120) and mouse_pos[1] in range(250,330):
                 if game_situation[2][0] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,BL))
                     game_situation[2][0] = char
                     
             elif mouse_pos[0] in range(130,205) and mouse_pos[1] in range(250,330):
                 if game_situation[2][1] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,BM))
                     game_situation[2][1] = char
         
             elif mouse_pos[0] in range(160,285) and mouse_pos[1] in range(250,330):
                 if game_situation[2][2] == None:
+                    p = switch_turn()
+                    next, char = p[0],p[1]
                     game_board.append((next,BR))
                     game_situation[2][2] = char
+            
+            elif mouse_pos[0] in range(450,550) and mouse_pos[1] in range(175,275):
+                game_situation = [[None for i in range(3)] for i in range(3)]
+                game_board = []
                 
             else:
                 print('Outside')
@@ -105,8 +125,8 @@ while True:
 
             for row in game_situation:
                 if row[0] == row[1] == row[2] != None:
-                    print("VOITTO UI JUMA SHEEEEEE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-            
+                    print("VOITTO!")
+                    
             for i in range(3):
                 if game_situation[0][i] == game_situation[1][i] == game_situation[2][i] != None:
                     print("HUHHUH")
@@ -145,10 +165,8 @@ while True:
     for char, pos in game_board:
         screen.blit(char,pos)
 
-
-
+    screen.blit(Retry,(450,175))
 
 
     
     pygame.display.update()
-    clock.tick(30)
