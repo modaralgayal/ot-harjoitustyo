@@ -18,7 +18,11 @@ def coverage(ctx):
 
 @task()
 def coverage_report(ctx):
-    ctx.run("coverage html", pty=True) 
+    ctx.run("coverage html", pty=True)
+
+@task
+def report(ctx):
+    ctx.run("coverage report", pty = True)
 
 @task 
 def lint(ctx):

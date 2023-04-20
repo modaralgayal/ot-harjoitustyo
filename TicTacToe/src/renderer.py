@@ -7,53 +7,51 @@ class Renderer:
 
         self.height = height
         self._screen = screen
-        self.WHITE = (255, 255, 255)
-        self.BLACK = (0, 0, 0)
+        self.white = (255, 255, 255)
+        self.black = (0, 0, 0)
         self.retry = pygame.image.load("src/assets/retry.png").convert_alpha()
 
     def render(self, game_board):
 
-        self._screen.fill(self.WHITE)
+        self._screen.fill(self.white)
 
         # Kanvas for game of 3x3
 
         #Diagonal --------------------------------------------------------------#
 
-        startX = 125
-        startY = 65
-        endX = 125
-        endY = self.height-65
+        start_x = 125
+        start_y = 65
+        end_x = 125
+        end_y = self.height-65
         width = 5
-        pygame.draw.line(self._screen, self.BLACK,
-                         (startX, startY), (endX, endY), width)
+        pygame.draw.line(self._screen, self.black,(start_x, start_y), (end_x, end_y), width)
 
-        startX = 210
-        startY = 65
-        endX = 210
-        endY = self.height-65
+        start_x = 210
+        start_y = 65
+        end_x = 210
+        end_y = self.height-65
         width = 5
-        pygame.draw.line(self._screen, self.BLACK,
-                         (startX, startY), (endX, endY), width)
+        pygame.draw.line(self._screen, self.black,(start_x, start_y), (end_x, end_y), width)
 
         #-----------------------------------------------------------------------#
 
         # Horizontal------------------------------------------------------------#
 
-        startX = 50
-        startY = 155
-        endX = 290
-        endY = 155
+        start_x = 50
+        start_y = 155
+        end_x = 290
+        end_y = 155
         width = 5
-        pygame.draw.line(self._screen, self.BLACK,
-                         (startX, startY), (endX, endY), width)
+        pygame.draw.line(self._screen, self.black,
+                         (start_x, start_y), (end_x, end_y), width)
 
-        startX = 50
-        startY = 245
-        endX = 290
-        endY = 245
+        start_x = 50
+        start_y = 245
+        end_x = 290
+        end_y = 245
         width = 5
-        pygame.draw.line(self._screen, self.BLACK,
-                         (startX, startY), (endX, endY), width)
+        pygame.draw.line(self._screen, self.black,
+                         (start_x, start_y), (end_x, end_y), width)
 
         #----------------------------------------------------------------------#
         for char, pos in game_board:

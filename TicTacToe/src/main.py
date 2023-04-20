@@ -6,6 +6,7 @@ from renderer import Renderer
 width = 700
 height = 400
 display = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Tic Tac Toe")
 
 game_board = []
 game_situation = [[None for i in range(3)] for i in range(3)]
@@ -24,13 +25,11 @@ BR = (230, 265)  # BottomLeft, BottomMiddle, BottomRight
 
 def main():
 
-    pygame.display.set_caption("Tic Tac Toe")
-
     renderer = Renderer(display, height)
     game_loop = Gameloop(game_board, game_situation, renderer,
                          width, height, UL, UM, UR, ML, M, MR, BL, BM, BR)
 
-    pygame.init()
+    pygame.__init__()
     game_loop.start()
 
 
