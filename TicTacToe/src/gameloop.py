@@ -13,8 +13,8 @@ class Gameloop:
 
         self._renderer = renderer
 
-        X = (pygame.image.load("assets/X.png").convert_alpha(), 'X')
-        O = (pygame.image.load("assets/circle.png").convert_alpha(), 'O')
+        X = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
+        O = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
 
         self.switch_turn = itertools.cycle([X, O]).__next__
 

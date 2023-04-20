@@ -9,7 +9,7 @@ class Renderer:
         self._screen = screen
         self.WHITE = (255, 255, 255)
         self.BLACK = (0, 0, 0)
-        self.retry = pygame.image.load("assets/retry.png").convert_alpha()
+        self.retry = pygame.image.load("src/assets/retry.png").convert_alpha()
 
     def render(self, game_board):
 
