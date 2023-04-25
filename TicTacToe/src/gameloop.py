@@ -32,6 +32,7 @@ class Gameloop:
 
         while True:
             if self._handle_events() == False:
+                return self.game_situation
                 break
 
             self._render(self.game_board)
@@ -39,24 +40,25 @@ class Gameloop:
     def _handle_events(self):
 
         for event in self.event_queue.get():
-            
+
             if event.type == pygame.MOUSEBUTTONDOWN:
+                
                 mouse_pos = pygame.mouse.get_pos()
+                
 
                 for box in self.click_ranges:
-                    #print()
-                    #print(mouse_pos[0] in range(box[0][0],box[0][1]))
-                    #print(mouse_pos[1] in range(box[1][0],box[1][1]))
                     print()
                     if mouse_pos[0] in range(box[0][0],box[0][1]) and mouse_pos[1] in range(box[1][0],box[1][1]):
                         if self.game_situation[box[2][0]][box[2][1]] == None:
-                            print(box[0][0],box[0][1])
-                            print(box[1][0],box[1][1])
-
+                            
                             p = self.switch_turn()
                             next, char = p[0], p[1]
                             self.game_board.append((next,self.places_on_board[3*box[2][0]+box[2][1]]))
                             self.game_situation[box[2][0]][box[2][1]] = char
+
+                            for row in self.game_situation:
+                                print(row)
+
                             break
                         
                     elif mouse_pos[0] in range(450, 550) and mouse_pos[1] in range(175, 275):
@@ -79,11 +81,10 @@ class Gameloop:
                     if self.game_situation[0][2] == self.game_situation[1][1] == self.game_situation[2][0] != None:
                         print("HUHHUH")
 
-            
-
 
             if event.type == pygame.QUIT:
                 return False
+            
         
 
     def _render(self, game_board):

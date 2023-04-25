@@ -46,9 +46,10 @@ class TestGameLoop(unittest.TestCase):
 
 class StubEvent():
 
-    def __init__(self, event_type):
+    def __init__(self, event_type, position):
         
         self.type = event_type
+        self.pos = position
 
 
 class StubEventQueue():
@@ -57,13 +58,14 @@ class StubEventQueue():
         
         self._events = events
 
+
     def get(self):
 
         return self._events
     
 class StubRenderer():
 
-    def render(self):
+    def render(self, game_board):
 
         pass
 
@@ -73,8 +75,6 @@ class TestGameLoop(unittest.TestCase):
 
     def setUp(self):
 
-        self.renderer = Renderer(display, height)
-
         self.click_ranges = [((55,120),(70,150)),((130,205),(70,150)),((160,285),(70,150)),
                              ((55,120),(130,240)),((130,205),(130,240)),((160,285),(70,240)),
                              ((55,120),(250,330)),((130,205),(250,330)),((160,285),(250,330))
@@ -83,30 +83,36 @@ class TestGameLoop(unittest.TestCase):
 
     def test_can_save_coordinates_correctly(self):
 
-        self.game_board = []
-        self.game_situation = [[None for i in range(3)] for i in range(3)]
+        game_board = []
+        game_situation = [[None for i in range(3)] for i in range(3)]
+        renderer = StubRenderer()
 
         events = []
 
-        for _ in self.click_ranges:
+        for place in self.click_ranges:
 
-            click = StubEvent(pygame.MOUSEBUTTONDOWN)
+            click = StubEvent(pygame.MOUSEBUTTONDOWN, (place[0][0]+5,place[1][0]+5))
             events.append(click)
+        
+        events.append(StubEvent(pygame.QUIT),(0,0))
         
         
         game_loop = Gameloop(
             StubEventQueue(events),
             game_board, 
             game_situation, 
-            self.renderer, 
+            renderer, 
             width, 
             height, 
             places_on_board,
             self.click_ranges
         )
 
-        game_loop.start()
+        game = game_loop.start()
 
-        for row in game_loop.game_situation:
+        assert game == [[None for i in range(3)] for i in range(3)]
+
+        for row in game:
             for char in row:
-                assert char is 'X' or char is 'O'
+                assert char == 'X' or char == 'O'
+                print('Meni läpi')
