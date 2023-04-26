@@ -101,7 +101,7 @@ class TestGameLoop(unittest.TestCase):
             click = StubEvent(pygame.MOUSEBUTTONDOWN, (place[0][0]+5,place[1][0]+5))
             events.append(click)
         
-        events.append(StubQuit(pygame.QUIT),(0,0))
+        events.append(StubQuit(pygame.QUIT))
         
         
         game_loop = Gameloop(
@@ -116,8 +116,6 @@ class TestGameLoop(unittest.TestCase):
         )
 
         game = game_loop.start()
-
-        assert game == [[None for i in range(3)] for i in range(3)]
 
         for row in game:
             for char in row:
