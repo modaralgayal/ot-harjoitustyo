@@ -26,7 +26,12 @@ BR = (230, 265)  # BottomLeft, BottomMiddle, BottomRight
 places_on_board = [UL, UM, UR, ML, M, MR, BL, BM, BR]
 
 
-class TestGameLoop(unittest.TestCase):
+click_ranges = [((55,120),(70,150)),((130,205),(70,150)),((160,285),(70,150)),
+                ((55,120),(130,240)),((130,205),(130,240)),((160,285),(70,240)),
+                ((55,120),(250,330)),((130,205),(250,330)),((160,285),(250,330))
+                ]
+
+class TestLoop(unittest.TestCase):
 
     def setUp(self):
 
@@ -34,9 +39,9 @@ class TestGameLoop(unittest.TestCase):
 
     def test_game_loop_constructor(self): 
 
+        event_queue = EventQueue()
         renderer = Renderer(display, height)
-
-        game_loop = Gameloop(game_board, game_situation, renderer, width, height, UL, UM, UR, ML, M, MR, BL, BM, BR)
+        game_loop = Gameloop(event_queue, game_board, game_situation, renderer, width, height, places_on_board, click_ranges)
 
         assert game_loop._renderer == renderer
         assert game_loop.screen == pygame.display.set_mode((width, height))
@@ -120,4 +125,4 @@ class TestGameLoop(unittest.TestCase):
         for row in game:
             for char in row:
                 assert char == 'X' or char == 'O'
-                print('Meni läpi')
+    

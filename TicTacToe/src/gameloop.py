@@ -44,7 +44,8 @@ class Gameloop:
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 
-                event.pos = pygame.mouse.get_pos()
+                if event.pos == None:
+                    event.pos = pygame.mouse.get_pos()
                 print(event.pos)
 
                 for box in self.click_ranges:
