@@ -32,10 +32,10 @@ class Gameloop:
 
         while True:
             if self._handle_events() == False:
-                return self.game_situation
                 break
 
             self._render(self.game_board)
+            return self.game_situation
 
     def _handle_events(self):
 
@@ -43,12 +43,12 @@ class Gameloop:
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 
-                mouse_pos = pygame.mouse.get_pos()
-                
+                event.pos = pygame.mouse.get_pos()
+                print(event.pos)
 
                 for box in self.click_ranges:
                     print()
-                    if mouse_pos[0] in range(box[0][0],box[0][1]) and mouse_pos[1] in range(box[1][0],box[1][1]):
+                    if event.pos[0] in range(box[0][0],box[0][1]) and event.pos[1] in range(box[1][0],box[1][1]):
                         if self.game_situation[box[2][0]][box[2][1]] == None:
                             
                             p = self.switch_turn()
@@ -61,7 +61,7 @@ class Gameloop:
 
                             break
                         
-                    elif mouse_pos[0] in range(450, 550) and mouse_pos[1] in range(175, 275):
+                    elif event.pos[0] in range(450, 550) and event.pos[1] in range(175, 275):
                         self.game_situation = [
                             [None for i in range(3)] for i in range(3)
                             ]

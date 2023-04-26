@@ -46,10 +46,17 @@ class TestGameLoop(unittest.TestCase):
 
 class StubEvent():
 
-    def __init__(self, event_type, position):
+    def __init__(self, event_type, position = None):
         
         self.type = event_type
-        self.pos = position
+        self.pos = pygame.mouse.set_pos(position)
+
+class StubQuit():
+
+    def __init__(self, event_type):
+            
+            self.type = event_type
+
 
 
 class StubEventQueue():
@@ -94,7 +101,7 @@ class TestGameLoop(unittest.TestCase):
             click = StubEvent(pygame.MOUSEBUTTONDOWN, (place[0][0]+5,place[1][0]+5))
             events.append(click)
         
-        events.append(StubEvent(pygame.QUIT),(0,0))
+        events.append(StubQuit(pygame.QUIT),(0,0))
         
         
         game_loop = Gameloop(
