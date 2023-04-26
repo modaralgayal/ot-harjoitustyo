@@ -35,7 +35,8 @@ class Gameloop:
                 break
 
             self._render(self.game_board)
-            return self.game_situation
+            
+        return self.game_situation
 
     def _handle_events(self):
 
