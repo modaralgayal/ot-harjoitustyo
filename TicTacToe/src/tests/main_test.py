@@ -26,9 +26,9 @@ BR = (230, 265)  # BottomLeft, BottomMiddle, BottomRight
 places_on_board = [UL, UM, UR, ML, M, MR, BL, BM, BR]
 
 
-click_ranges = [((55,120),(70,150)),((130,205),(70,150)),((160,285),(70,150)),
-                ((55,120),(130,240)),((130,205),(130,240)),((160,285),(70,240)),
-                ((55,120),(250,330)),((130,205),(250,330)),((160,285),(250,330))
+click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285),(70,150),(0,2)),
+                ((55,120),(130,240),(1,0)),((130,205),(130,240),(1,1)),((160,285),(130,240),(1,2)),
+                ((55,120),(250,330),(2,0)),((130,205),(250,330),(2,1)),((160,285),(250,330),(2,2))
                 ]
 
 class TestLoop(unittest.TestCase):
@@ -51,10 +51,13 @@ class TestLoop(unittest.TestCase):
 
 class StubEvent():
 
-    def __init__(self, event_type, position = None):
+    def __init__(self, event_type, position):
         
         self.type = event_type
-        self.pos = pygame.mouse.set_pos(position)
+        self.pos = position
+        #pygame.mouse.set_visible(True) 
+
+        #pygame.mouse.set_pos(position)
 
 class StubQuit():
 
@@ -87,10 +90,10 @@ class TestGameLoop(unittest.TestCase):
 
     def setUp(self):
 
-        self.click_ranges = [((55,120),(70,150)),((130,205),(70,150)),((160,285),(70,150)),
-                             ((55,120),(130,240)),((130,205),(130,240)),((160,285),(70,240)),
-                             ((55,120),(250,330)),((130,205),(250,330)),((160,285),(250,330))
-                             ]
+        self.click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285),(70,150),(0,2)),
+                            ((55,120),(130,240),(1,0)),((130,205),(130,240),(1,1)),((160,285),(130,240),(1,2)),
+                            ((55,120),(250,330),(2,0)),((130,205),(250,330),(2,1)),((160,285),(250,330),(2,2))
+                            ]
     
 
     def test_can_save_coordinates_correctly(self):

@@ -4,7 +4,6 @@ from itertools import cycle
 import itertools
 import random
 
-
 class Gameloop:
 
     def __init__(self, event_queue, game_board, game_situation, renderer, width, height, places_on_board, click_ranges):
@@ -44,13 +43,16 @@ class Gameloop:
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 
-                if event.pos == None:
-                    event.pos = pygame.mouse.get_pos()
-                print(event.pos)
+                if pygame.mouse.get_pos() == (0,0):
+                    pos = event.pos
+                else:
+                    pos = pygame.mouse.get_pos()
+                
+                print(pos)
 
                 for box in self.click_ranges:
                     print()
-                    if event.pos[0] in range(box[0][0],box[0][1]) and event.pos[1] in range(box[1][0],box[1][1]):
+                    if pos[0] in range(box[0][0],box[0][1]) and pos[1] in range(box[1][0],box[1][1]):
                         if self.game_situation[box[2][0]][box[2][1]] == None:
                             
                             p = self.switch_turn()
@@ -63,7 +65,7 @@ class Gameloop:
 
                             break
                         
-                    elif event.pos[0] in range(450, 550) and event.pos[1] in range(175, 275):
+                    elif pos[0] in range(450, 550) and event.pos[1] in range(175, 275):
                         self.game_situation = [
                             [None for i in range(3)] for i in range(3)
                             ]
