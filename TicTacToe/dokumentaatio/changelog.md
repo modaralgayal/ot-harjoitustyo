@@ -19,4 +19,4 @@
 
 ## Viikko 6 
 
-- 
+- Kaikkien pelin osioiden sijainnit mitkä näkyvät taululle on tuotettu loopeilla, ennen ne olivat kaikki käsin tehty. 
