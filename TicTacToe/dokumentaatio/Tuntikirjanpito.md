@@ -8,6 +8,9 @@
 | 13.4  | 2.5  | Voittaminen pelissä on mahdollista |
 | 17.4  | 3    | Sovelluksen jakaminen moduuleihin |
 | 18.4  | 3    | Moduulit saatu kokonaan toimimaan, testaaminen saatu alkuun, ohjelman käynnistäminen onnistuu invoke kometoa käyttäen |
+| 23.4  | 3    | Yrittänyt Loopin testaamista |
+| 28.4  | 3    | Loopin testi menee läpi |
+| 30.4  | 4    | Kaikki sijainnit, joihin menee joko X tai O ovat nyt tuotetta loopeilla, ennen ne olivat laadittu kaikki käsin. Samoin myös viivat joilla piirrän itse peliä. | 
 
  
 

@@ -10,3 +10,13 @@
 - Toiminnalisuus hoidettu
 - Ohjelma jaettu moduuleihin
 - Testaaminen aloitettu
+
+
+## Viikko 5
+
+- Loopin testaus onnistuu
+
+
+## Viikko 6 
+
+- 
