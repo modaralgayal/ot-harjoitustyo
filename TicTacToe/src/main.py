@@ -20,8 +20,6 @@ for level in range(3):
     for column in range(3):
         PLACES_ON_BOARD.append((column*70+X,level*90+Y))
 
-#print(PLACES_ON_BOARD)
-
 
 click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285),(70,150),(0,2)),
                 ((55,120),(130,240),(1,0)),((130,205),(130,240),(1,1)),((160,285),(130,240),(1,2)),

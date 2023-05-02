@@ -20,11 +20,15 @@ Sovellus on Ristinolla peli jota pelaa kaksi pelaajaa paikallisesti yhdellä kon
 
 * Asenna riippuvuudet komennolla:
 
-`poetry install`
+```bash
+poetry install
+```
 
 * Käynnistä sovellus komennolla:
 
-`poetry run invoke start`
+```bash
+poetry run invoke start
+```
 
 
 ### Komentorivitoiminnot
@@ -33,24 +37,33 @@ Sovellus on Ristinolla peli jota pelaa kaksi pelaajaa paikallisesti yhdellä kon
 
 * Ohjelman käynnistäminen komennolla:
 
-`poetry run invoke start`
+```bash
+poetry run invoke start
+```
+
 
 #### Testaus
 
 * Ohjelman testaaminen komennolla:
 
-`poetry run invoke test`
+```bash
+poetry run invoke test
+```
 
 
 #### Testikattavuus
 
 * Ohjelman testikattavuus komennolla:
 
-`poetry run invoke coverage-report`
+```bash
+poetry run invoke coverage-report
+```
 
 
 #### Pylint
 
 * Ohjelman laadun testaaminen komennolla:
 
-`poetry run invoke lint`
+```bash
+poetry run invoke lint
+```
