@@ -20,7 +20,7 @@ Sovellus on Ristinolla peli jota pelaa kaksi pelaajaa paikallisesti yhdellä kon
 
 * Asenna riippuvuudet komennolla:
 
-`poetry install`
+<copy-button>`poetry install`</copy-button>
 
 * Käynnistä sovellus komennolla:
 
