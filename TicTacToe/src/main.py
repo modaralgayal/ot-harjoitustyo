@@ -11,28 +11,25 @@ pygame.display.set_caption("Tic Tac Toe")
 
 GAME_BOARD = []
 GAME_SITUATION = [[None for i in range(3)] for i in range(3)]
-
 PLACES_ON_BOARD = []
+CLICK_RANGES = []
 
 X = 60
 Y = 85
 for level in range(3):
     for column in range(3):
+        CLICK_RANGES.append(((column*70+X, column*70+X+70),(level*90+Y,level*90+Y+90),(level,column)))
         PLACES_ON_BOARD.append((column*70+X,level*90+Y))
 
-
-click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285),(70,150),(0,2)),
-                ((55,120),(130,240),(1,0)),((130,205),(130,240),(1,1)),((160,285),(130,240),(1,2)),
-                ((55,120),(250,330),(2,0)),((130,205),(250,330),(2,1)),((160,285),(250,330),(2,2))
-                ]
-
+print()
+print(PLACES_ON_BOARD)
 
 def main():
 
     event_queue = EventQueue()
     renderer = Renderer(DISPLAY, HEIGHT)
     game_loop = Gameloop(event_queue, GAME_BOARD, GAME_SITUATION, renderer,
-                         WIDTH, HEIGHT, PLACES_ON_BOARD, click_ranges)
+                         WIDTH, HEIGHT, PLACES_ON_BOARD, CLICK_RANGES)
     event_queue = EventQueue()
 
     pygame.init()
