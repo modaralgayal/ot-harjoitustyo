@@ -4,22 +4,23 @@ from renderer import Renderer
 from event_pueue import EventQueue
 
 
-width = 700
-height = 400
-display = pygame.display.set_mode((width, height))
+WIDTH = 700
+HEIGHT = 400
+DISPLAY = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Tic Tac Toe")
 
-game_board = []
-game_situation = [[None for i in range(3)] for i in range(3)]
+GAME_BOARD = []
+GAME_SITUATION = [[None for i in range(3)] for i in range(3)]
 
-places_on_board = []
+PLACES_ON_BOARD = []
 
-x = 60; y = 85
+X = 60
+Y = 85
 for level in range(3):
     for column in range(3):
-        places_on_board.append((column*70+x,level*90+y))
+        PLACES_ON_BOARD.append((column*70+X,level*90+Y))
 
-#print(places_on_board)
+#print(PLACES_ON_BOARD)
 
 
 click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285),(70,150),(0,2)),
@@ -31,9 +32,9 @@ click_ranges = [((55,120),(70,150),(0,0)), ((130,205),(70,150), (0,1)),((160,285
 def main():
 
     event_queue = EventQueue()
-    renderer = Renderer(display, height)
-    game_loop = Gameloop(event_queue, game_board, game_situation, renderer,
-                         width, height, places_on_board, click_ranges)
+    renderer = Renderer(DISPLAY, HEIGHT)
+    game_loop = Gameloop(event_queue, GAME_BOARD, GAME_SITUATION, renderer,
+                         WIDTH, HEIGHT, PLACES_ON_BOARD, click_ranges)
     event_queue = EventQueue()
 
     pygame.init()

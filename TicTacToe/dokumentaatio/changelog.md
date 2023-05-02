@@ -20,3 +20,6 @@
 ## Viikko 6 
 
 - Kaikkien pelin osioiden sijainnit mitkä näkyvät taululle on tuotettu loopeilla, ennen ne olivat kaikki käsin tehty. 
+- Release on laitettu githubiin
+- Pelien osioiden tuottaminen loopeilla nyt mahdollistaa pelin laajentamisen
+- Pelistä tehty symmetrisempi

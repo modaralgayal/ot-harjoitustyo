@@ -8,7 +8,6 @@ packages = [{include = "poetry_testi"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-cowsay = "^5.0"
 invoke = "^2.0.0"
 tasks = "^2.8.0"
 pygame = "^2.3.0"
