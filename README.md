@@ -15,6 +15,5 @@
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/blob/master/TicTacToe/dokumentaatio/arkkitehtuuri.md)
 
 
-## Release
-
+### Release
 [Löytyy täältä](https://github.com/modaralgayal/ot-harjoitustyo/releases/tag/Release)
