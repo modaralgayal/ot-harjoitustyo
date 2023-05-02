@@ -4,12 +4,12 @@
 
 #### Tavoitteet:
 
-* Aluksi normaali toimiva ristinolla peli
+* Aluksi normaali toimiva ristinolla peli (Tehty)
 * Ristinolla isommilla pohjilla (4x4, 5x5,...)
-* Ristinolla konetta vastaan
+* Ristinolla konetta vastaan (Liian vaikee, teen tiralabrassa)
 
 #### Käyttäjät: 
 
-* Käyttäjiä on vain yhdenlaisia, pelaajat
-* Peliä on mahdollista pelata kaksi henkilöä yhdellä koneella
-* Pelissä ei ole tarve luoda käyttäjätunnusta
+* Käyttäjiä on vain yhdenlaisia, pelaajat (Tehty)
+* Peliä on mahdollista pelata kaksi henkilöä yhdellä koneella (Tehty)
+* Pelissä ei ole tarve luoda käyttäjätunnusta (Tehty)

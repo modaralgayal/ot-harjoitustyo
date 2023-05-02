@@ -11,3 +11,4 @@
 | 23.4  | 3    | Yrittänyt Loopin testaamista |
 | 28.4  | 3    | Loopin testi menee läpi |
 | 30.4  | 4    | Kaikki sijainnit, joihin menee joko X tai O ovat nyt tuotetta loopeilla, ennen ne olivat laadittu kaikki käsin. Samoin myös viivat joilla piirrän itse peliä. |
+| 2.5   | 3    | Koodin laadun parantaminen, kaikki tarkistukseen käytettävät listat tuotetaan nyt automaattisesti loopeilla, ne eivät ole etukäteen tehty käsin. |
