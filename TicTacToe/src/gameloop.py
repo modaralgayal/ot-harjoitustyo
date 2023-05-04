@@ -51,11 +51,14 @@ class Gameloop:
                             for row in self.game_situation:
                                 print(row)
                             break
-                    elif pos[0] in range(450, 550) and event.pos[1] in range(175, 275):
+                    elif pos[0] in range(550, 650) and event.pos[1] in range(175, 275):
                         self.game_situation = [
                             [None for i in range(3)] for i in range(3)
                             ]
                         self.game_board = []
+                
+
+                '''  
                 for row in self.game_situation:
                     if row[0] == row[1] == row[2] != None:
                         print("VOITTO!")
@@ -66,6 +69,8 @@ class Gameloop:
                         print("HUHHUH")
                     if self.game_situation[0][2] == self.game_situation[1][1] == self.game_situation[2][0] != None:
                         print("HUHHUH")
+                '''
+                
             if event.type == pygame.QUIT:
                 return False
             

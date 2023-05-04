@@ -29,10 +29,11 @@ class Renderer:
         for i in range(1,self.grid):
             lines.append(((x_axis,y_axis+i*90),(x_axis+self.grid*70, y_axis+i*90)))
         
-        #Diagonal --------------------------------------------------------------#
+        vertical_length = y_axis+i*90
+        #Vertical --------------------------------------------------------------#
 
         for i in range(1,self.grid):
-            lines.append(((x_axis+i*70,y_axis),(x_axis+i*70, self.height - 65)))
+            lines.append(((x_axis+i*70,y_axis),(x_axis+i*70, vertical_length + 90)))
 
 
         for start, finish in lines:
@@ -42,7 +43,7 @@ class Renderer:
         for char, pos in game_board:
             self._screen.blit(char, pos)
 
-        self._screen.blit(self.retry, (450, 175))
+        self._screen.blit(self.retry, (550, 175))
 
         # print(self.game_board)
 
