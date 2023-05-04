@@ -7,12 +7,14 @@ import pygame
 class Gameloop:
 
     def __init__(self, event_queue, game_board, game_situation, 
-                 renderer, width, height, places_on_board, click_ranges):
+                 renderer, width, height, places_on_board, click_ranges, grid):
 
         self.screen = pygame.display.set_mode((width, height))
         self._renderer = renderer
         self.event_queue = event_queue
         self.click_ranges = click_ranges
+        self.grid = grid
+        print(self.grid)
         _x = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
         _o = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
         self.switch_turn = cycle([_x,_o]).__next__
