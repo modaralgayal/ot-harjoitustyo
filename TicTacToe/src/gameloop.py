@@ -46,14 +46,14 @@ class Gameloop:
                         if not self.game_situation[box[2][0]][box[2][1]]:
                             _p = self.switch_turn()
                             next, char = _p[0], _p[1]
-                            self.game_board.append((next,self.places_on_board[3*box[2][0]+box[2][1]]))
+                            self.game_board.append((next,self.places_on_board[self.grid*box[2][0]+box[2][1]]))
                             self.game_situation[box[2][0]][box[2][1]] = char
                             for row in self.game_situation:
                                 print(row)
                             break
                     elif pos[0] in range(550, 650) and event.pos[1] in range(175, 275):
                         self.game_situation = [
-                            [None for i in range(3)] for i in range(3)
+                            [None for i in range(self.grid)] for i in range(self.grid)
                             ]
                         self.game_board = []
                 
