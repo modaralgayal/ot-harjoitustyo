@@ -57,11 +57,9 @@ class Gameloop:
                             [None for i in range(self.grid)] for i in range(self.grid)
                             ]
                         self.game_board = []
-                        
                     elif pos[0] in range(600, 666) and event.pos[1] in range(150, 200):
 
-                        return None                                    
-
+                        print("Poistu")
                 '''  
                 for row in self.game_situation:
                     if row[0] == row[1] == row[2] != None:
@@ -76,8 +74,7 @@ class Gameloop:
                 '''
                 
             if event.type == pygame.QUIT:
-                return None
-        return True
+                return False
             
     def _render(self, game_board):
 
