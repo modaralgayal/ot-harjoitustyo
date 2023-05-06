@@ -1,6 +1,7 @@
 from random import choice
 from itertools import cycle
 import pygame
+from menu_main import menu_main
 
 
 
@@ -51,12 +52,15 @@ class Gameloop:
                             for row in self.game_situation:
                                 print(row)
                             break
-                    elif pos[0] in range(550, 650) and event.pos[1] in range(175, 275):
+                    elif pos[0] in range(600, 700) and event.pos[1] in range(250, 350):
                         self.game_situation = [
                             [None for i in range(self.grid)] for i in range(self.grid)
                             ]
                         self.game_board = []
-                
+                        
+                    elif pos[0] in range(600, 666) and event.pos[1] in range(150, 200):
+
+                        return None                                    
 
                 '''  
                 for row in self.game_situation:
@@ -72,8 +76,10 @@ class Gameloop:
                 '''
                 
             if event.type == pygame.QUIT:
-                return False
+                return None
+        return True
             
     def _render(self, game_board):
 
         self._renderer.render(game_board)
+

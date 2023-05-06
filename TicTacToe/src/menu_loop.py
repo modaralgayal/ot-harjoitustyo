@@ -14,10 +14,9 @@ class MenuLoop:
 
         while True:
             if self._handle_events() is False:
-                #print(self.grid_size)
-                break
+                return self.grid_size
             self._render()
-        return self.grid_size
+        
 
     def _handle_events(self):
 

@@ -5,7 +5,7 @@ from event_pueue import EventQueue
 from menu_main import menu_main
 
 
-WIDTH = 700
+WIDTH = 800
 HEIGHT = 270
 DISPLAY = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Tic Tac Toe")

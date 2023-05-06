@@ -2,7 +2,6 @@ from menu_loop import MenuLoop
 from menu_renderer import MenuRenderer
 import pygame
 
-
 pygame.init()
 
 HEIGHT = 400
