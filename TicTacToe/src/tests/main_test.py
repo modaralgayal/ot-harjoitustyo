@@ -55,9 +55,6 @@ class StubEvent():
         
         self.type = event_type
         self.pos = position
-        #pygame.mouse.set_visible(True) 
-
-        #pygame.mouse.set_pos(position)
 
 class StubQuit():
 

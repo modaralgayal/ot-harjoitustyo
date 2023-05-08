@@ -60,18 +60,49 @@ class Gameloop:
                     elif pos[0] in range(600, 666) and event.pos[1] in range(150, 200):
 
                         print("Poistu")
-                '''  
+
+                # Test winning condition in rows ------------------------------------
+                
                 for row in self.game_situation:
-                    if row[0] == row[1] == row[2] != None:
+                    if len(set(row)) == 1 and row[0] is not None:
                         print("VOITTO!")
-                for i in range(3):
-                    if self.game_situation[0][i] == self.game_situation[1][i] == self.game_situation[2][i] != None:
-                        print("HUHHUH")
-                    if self.game_situation[0][0] == self.game_situation[1][1] == self.game_situation[2][2] != None:
-                        print("HUHHUH")
-                    if self.game_situation[0][2] == self.game_situation[1][1] == self.game_situation[2][0] != None:
-                        print("HUHHUH")
-                '''
+                
+                #--------------------------------------------------------------------
+                # Test winning condition from TopLeft to BottomRight-----------------
+    
+                game_set_across = set()
+                for c in range(self.grid):
+                    game_set_across.add(self.game_situation[c][c])
+                
+                if len(game_set_across) == 1 and None not in game_set_across:
+                    print("VOITTO!")
+
+                #--------------------------------------------------------------------
+                # Test winning condition from TopRight to BottomLeft-----------------
+
+                game_set_across_reversed = set()
+                for row in range(self.grid):
+                    for c in range(1,self.grid+1):
+                        if row + 1 == c:
+                            game_set_across_reversed.add(self.game_situation[row][-c])
+
+                if len(game_set_across_reversed) == 1 and None not in game_set_across_reversed:
+                    print("VOITTO!")
+                
+                #--------------------------------------------------------------------
+                # Test winning conidition vertically---------------------------------
+
+                for col in range(self.grid):
+                    game_set_vertical = set()
+                    for row in range(self.grid):
+                        game_set_vertical.add(self.game_situation[row][col])
+                    if len(game_set_vertical) == 1 and None not in game_set_vertical:
+                        print("VOITTO!")
+                
+                #--------------------------------------------------------------------
+
+
+
                 
             if event.type == pygame.QUIT:
                 return False
