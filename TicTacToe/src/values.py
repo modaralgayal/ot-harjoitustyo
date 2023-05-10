@@ -20,6 +20,8 @@ def values(grid):
             click_ranges.append(((column*70+X, column*70+X+70),
                                 (level*90+Y, level*90+Y+90), (level, column)))
             places_on_board.append((column*70+X, level*90+Y))
-    
-    return display, grid, height, width, game_board, game_situation, places_on_board, click_ranges
 
+    print(click_ranges)
+    print(width, height)
+    print(places_on_board)
+    return display, grid, height, width, game_board, game_situation, places_on_board, click_ranges

@@ -5,9 +5,8 @@ from event_pueue import EventQueue
 
 pygame.display.set_caption("Tic Tac Toe")
 
-def main(display, grid, height, width, game_board, game_situation, places_on_board, click_ranges):
 
-    
+def main(display, grid, height, width, game_board, game_situation, places_on_board, click_ranges):
 
     event_queue = EventQueue()
     renderer = Renderer(display, height, grid, width)

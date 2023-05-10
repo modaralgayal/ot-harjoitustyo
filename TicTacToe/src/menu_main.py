@@ -12,7 +12,6 @@ GRID_SIZES = [("3x3", (100, 200), 3), ("4x4", (210, 200), 4), ("5x5",
                                                                (320, 200), 5), ("6x6", (430, 200), 6), ("7x7", (540, 200), 7)]
 
 
-
 def menu_main():
 
     menu_renderer = MenuRenderer(SCREEN, HEIGHT, WIDTH, GRID_SIZES)

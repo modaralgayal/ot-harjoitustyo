@@ -18,7 +18,7 @@ def coverage_report(ctx):
 
 @task
 def report(ctx):
-    ctx.run("coverage report", pty = True)
+    ctx.run("coverage report -m", pty = True)
 
 @task 
 def lint(ctx):
