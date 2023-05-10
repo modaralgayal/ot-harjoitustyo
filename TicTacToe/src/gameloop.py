@@ -1,8 +1,6 @@
 from random import choice
 from itertools import cycle
 import pygame
-from menu_main import menu_main
-
 
 
 class Gameloop:
@@ -15,6 +13,7 @@ class Gameloop:
         self.event_queue = event_queue
         self.click_ranges = click_ranges
         self.grid = grid
+        self.width = width
         print(self.grid)
         _x = (pygame.image.load("src/assets/X.png").convert_alpha(), 'X')
         _o = (pygame.image.load("src/assets/circle.png").convert_alpha(), 'O')
@@ -57,9 +56,9 @@ class Gameloop:
                             [None for i in range(self.grid)] for i in range(self.grid)
                             ]
                         self.game_board = []
-                    elif pos[0] in range(600, 666) and event.pos[1] in range(150, 200):
-
-                        print("Poistu")
+                    elif pos[0] in range(self.width-150,self.width-84) and event.pos[1] in range(120, 170):
+                        print("GoBack")
+                        return "GoBack"
 
                 # Test winning condition in rows ------------------------------------
                 

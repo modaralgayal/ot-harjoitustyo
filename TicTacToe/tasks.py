@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("python3 src/main.py", pty=True)
+    ctx.run("python3 src/run.py", pty=True)
 
 @task
 def test(ctx):
@@ -23,3 +23,7 @@ def report(ctx):
 @task 
 def lint(ctx):
     ctx.run("pylint src", pty=True)
+
+@task
+def format(ctx):
+    ctx.run("autopep8 --in-place --recursive src", pty=True)
