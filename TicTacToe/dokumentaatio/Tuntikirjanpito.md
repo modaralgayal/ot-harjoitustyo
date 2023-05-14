@@ -12,3 +12,10 @@
 | 28.4  | 3    | Loopin testi menee läpi |
 | 30.4  | 4    | Kaikki sijainnit, joihin menee joko X tai O ovat nyt tuotetta loopeilla, ennen ne olivat laadittu kaikki käsin. Samoin myös viivat joilla piirrän itse peliä. |
 | 2.5   | 3    | Koodin laadun parantaminen, kaikki tarkistukseen käytettävät listat tuotetaan nyt automaattisesti loopeilla, ne eivät ole etukäteen tehty käsin. |
+| 4.5   | 3    | Debuggais, testaaminen |
+| 5.5   | 3    | Debuggais, testaaminen |
+| 8.5   | 2    | Debuggais, testaaminen |
+| 10.5   | 3    | Debuggais, testaaminen |
+| 12.5   | 3    | Debuggais, testaaminen |
+| 14.5   | 3    | Debuggais, testaaminen, koodin laadun parantaminen, viimeistely, Release |
+
