@@ -23,3 +23,4 @@
 - Release on laitettu githubiin
 - Pelien osioiden tuottaminen loopeilla nyt mahdollistaa pelin laajentamisen
 - Pelistä tehty symmetrisempi
+- Pelissä on mahdollista mennä edestakaisin aloitusruudun ja pelin välillä.

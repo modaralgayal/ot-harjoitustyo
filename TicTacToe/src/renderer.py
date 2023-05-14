@@ -3,12 +3,12 @@ import pygame
 
 class Renderer:
 
-    def __init__(self, screen, height, grid, width):
+    def __init__(self, grid):
 
-        self.height = height
-        self._screen = screen
+        self.height = 270+grid*65
+        self._screen = pygame.display.set_mode((800, 270+grid*65))
         self.grid = grid
-        self.width = width
+        self.width = 800
         self.white = (255, 255, 255)
         self.black = (0, 0, 0)
         self.retry = pygame.image.load("src/assets/retry.png").convert_alpha()

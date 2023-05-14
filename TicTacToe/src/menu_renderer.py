@@ -14,10 +14,10 @@ class MenuRenderer:
         self.black = (0, 0, 0)
         self.red = (255, 0, 0)
 
-    def draw_text(self, text, font, text_col, x, y):
+    def draw_text(self, text, font, text_col, _x, _y):
 
         img = font.render(text, True, text_col)
-        self._screen.blit(img, (x, y))
+        self._screen.blit(img, (_x, _y))
 
     def render(self):
 
@@ -25,8 +25,7 @@ class MenuRenderer:
 
         self.draw_text("Choose Grid", self.text_font, (0, 0, 0), 267.5, 100)
 
-        for text, coord, value in self.grid_sizes:
-
+        for text, coord in self.grid_sizes:
             self.draw_text(text, self.text_font, self.red, coord[0], coord[1])
 
         pygame.display.update()

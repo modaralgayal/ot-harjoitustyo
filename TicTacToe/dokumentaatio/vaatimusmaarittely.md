@@ -5,8 +5,8 @@
 #### Tavoitteet:
 
 * Aluksi normaali toimiva ristinolla peli (Tehty)
-* Ristinolla isommilla pohjilla (4x4, 5x5,...)
-* Ristinolla konetta vastaan (Liian vaikee, teen tiralabrassa)
+* Ristinolla isommilla pohjilla (4x4, 5x5, 6x6, 7x7) (Tehty)
+* Ristinolla konetta vastaan (Liian vaikea, teen tiralabrassa)
 
 #### Käyttäjät: 
 
