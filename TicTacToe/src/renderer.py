@@ -12,10 +12,10 @@ class Renderer:
         self.white = (255, 255, 255)
         self.black = (0, 0, 0)
         self.retry = pygame.image.load("src/assets/retry.png").convert_alpha()
-        self.go_back = pygame.image.load(
-            "src/assets/goback.png").convert_alpha()
+        self.winner = pygame.image.load("src/assets/winner.jpeg").convert_alpha()
+        self.go_back = pygame.image.load("src/assets/goback.png").convert_alpha()
 
-    def render(self, game_board):
+    def render(self, game_board, winning):
 
         self._screen.fill(self.white)
 
@@ -51,5 +51,8 @@ class Renderer:
         self._screen.blit(self.retry, (600, 250))
 
         self._screen.blit(self.go_back, (self.width-150, 120))
+
+        if winning:
+            self._screen.blit(self.winner, (350, 250))
 
         pygame.display.update()

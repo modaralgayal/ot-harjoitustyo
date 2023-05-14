@@ -24,13 +24,16 @@ class Gameloop:
             [None for i in range(grid)] for i in range(grid)]
 
     def start(self):
+        self.winning = False
         while True:
             action = self._handle_events()
             if action == "GoBack":
                 return "GoBack"
             if not action:
                 break
-            self._render(self.game_board)
+            if action is True:
+                self.winning = True
+            self._render(self.game_board,self.winning)
         return self.game_situation, self.check_game()
 
     def _handle_events(self):
@@ -58,6 +61,7 @@ class Gameloop:
                         [None for i in range(self.grid)] for i in range(self.grid)
                     ]
                     self.game_board = []
+                    self.winning = False
                 elif (
                     pos[0] in range(self.width - 150, self.width - 84)
                     and pos[1] in range(120, 170)
@@ -101,5 +105,5 @@ class Gameloop:
                 # --------------------------------------------------------------------
         return "Skip"
 
-    def _render(self, game_board):
-        self._renderer.render(game_board)
+    def _render(self,game_board,winning):
+        self._renderer.render(game_board,winning)
